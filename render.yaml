@@ -8,3 +8,8 @@ services:
       corepack prepare pnpm@8.15.4 --activate
       pnpm install
     startCommand: pnpm run start
+    envVars:
+      - key: OPENAI_API_KEY
+        value: your-openai-api-key
+      - key: ANTHROPIC_API_KEY
+        value: your-anthropic-api-key
