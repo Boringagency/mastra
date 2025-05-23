@@ -1,16 +1,10 @@
 services:
   - type: web
-    name: mastra-server
+    name: mastra
     env: node
     plan: free
     buildCommand: |
       corepack enable
-      corepack prepare pnpm@latest --activate
+      corepack prepare pnpm@8.15.4 --activate
       pnpm install
     startCommand: pnpm run start
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: OPENAI_API_KEY
-        value: your-openai-key-here
-      # Tambahin ENV lain kayak ANTHROPIC_API_KEY dll di sini
